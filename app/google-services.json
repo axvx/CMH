@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "493465503933",
+    "firebase_url": "https://colegiomedico-25004.firebaseio.com",
+    "project_id": "colegiomedico-25004",
+    "storage_bucket": "colegiomedico-25004.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493465503933:android:cf6ccd8c1b22d19f",
+        "android_client_info": {
+          "package_name": "com.example.axbx.hideactionbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493465503933-qcho8valee4qp9bil5rklad2aoataris.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.axbx.hideactionbar",
+            "certificate_hash": "de89fd8bc61ebb592ff73bdb913abea994d6215d"
+          }
+        },
+        {
+          "client_id": "493465503933-c8af3l4siccace15lno7m5qc3mrehu27.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkD0WV9AxhJ6ZDb8AJQ38YT6chF-ZY7VE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493465503933-c8af3l4siccace15lno7m5qc3mrehu27.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
