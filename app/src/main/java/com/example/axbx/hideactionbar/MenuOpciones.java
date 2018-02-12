@@ -174,6 +174,19 @@ mAuth.signOut(); //Desloguea
 
         } else if (id == R.id.nav_share) { //Compartir
             Toast.makeText(getApplicationContext(),"Compartir",Toast.LENGTH_SHORT).show();
+            try {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Medica Line");
+                String sAux = "\nTe recomiendo bajar esta aplicación\n\n";
+                //Vinculo en PlayStore
+                sAux = sAux + "https://play.google.com/store/apps/details?id=Orion.Soft \n\n";
+                i.putExtra(Intent.EXTRA_TEXT, sAux);
+                startActivity(Intent.createChooser(i, "elige one"));
+            } catch(Exception e) {
+                //e.toString();
+            }
+
 
         } else if (id == R.id.nav_send) { //Contactanos
 

@@ -35,9 +35,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 
-public class login extends AppCompatActivity {
+public class login extends  AppCompatActivity  {
 
-    //FB AUTH
+    //FB AUTHENTICATION
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private LoginButton loginButton;
