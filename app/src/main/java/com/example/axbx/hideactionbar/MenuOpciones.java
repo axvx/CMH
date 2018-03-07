@@ -10,6 +10,8 @@ package com.example.axbx.hideactionbar;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -36,10 +39,13 @@ public class MenuOpciones extends AppCompatActivity
     FirebaseAuth.AuthStateListener mAuthListener;
 
 
+    private VideoView mVideoView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_opciones);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

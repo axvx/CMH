@@ -63,7 +63,7 @@ public class SesionesVivo extends Fragment {
         }
     }
     public WebView mWebView;
-
+    public WebView mWebView2;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,15 +73,28 @@ public class SesionesVivo extends Fragment {
 
 
         mWebView = (WebView) v.findViewById(R.id.webview);
-        mWebView.loadUrl("https://www.ustream.tv/embed/23465661?html5ui");
+        mWebView2 = (WebView) v.findViewById(R.id.webview2);
+
+        https://www.youtube.com/embed/VTyzzclMqWQ
+       mWebView.loadUrl("https://www.ustream.tv/embed/23465661?html5ui");
+        //mWebView.loadUrl("https://www.youtube.com/embed/71P_dDnv-p4");
+
+        mWebView2.loadUrl("http://www.ustream.tv/socialstream/23465661");
+     
+
 
         // Enable Javascript
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
 
+
+        // Enable Javascript
+        WebSettings webSettings2 = mWebView2.getSettings();
+        webSettings2.setJavaScriptEnabled(true);
         // Force links and redirects to open in the WebView instead of in a browser
         mWebView.setWebViewClient(new WebViewClient());
 
+        mWebView2.setWebViewClient(new WebViewClient());
         return v;
     }
 
@@ -114,4 +127,20 @@ public class SesionesVivo extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+    /**
+     *
+     *
+     *
+     *
+     * Vamos a hablar sin mentiras, somos esclavos verdad, a quien tratamos de engañar con esta farsa
+¿la democracia realmente existe?,la liberta de pensamiento, la igualdad de genero o la disminucion de la pobreza?
+     francamente son casos aislados donde se han visto este tipo de cosas?, es que acaso son quimeras,
+     o quiza leyendas urbanas.
+
+     Yo fui de aquellos defensores de la libertad, escribia con voracidad y violencia tratando de despertar
+     conciencias, hoy
+     */
+
+
 }

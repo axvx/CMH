@@ -2,6 +2,7 @@ package com.example.axbx.hideactionbar;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -68,12 +70,38 @@ FirebaseAuth.AuthStateListener mAuthListener;
     }
     //fNB AUTH
 
+   // com.facebook.login.widget.LoginButton btn = new LoginButton(this);
 
+    private VideoView mVideoView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //Video login screen
+        //************************************************
+
+
+        mVideoView = (VideoView) findViewById(R.id.bgVideoView);
+
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.corazon);
+
+        mVideoView.setVideoURI(uri);
+        mVideoView.start();
+
+        mVideoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.setLooping(true);
+            }
+        });
+
+
+
+
+        //************************************************
+
 
         button=(SignInButton) findViewById(R.id.LoginGoogle);
         mAuth = FirebaseAuth.getInstance();
@@ -111,6 +139,10 @@ FirebaseAuth.AuthStateListener mAuthListener;
 
 
 //Login FB
+
+      //  com.facebook.login.widget.LoginButton btn = new LoginButton(this);
+       // btn.performClick();
+
 
         callBackManager=CallbackManager.Factory.create();
         loginButton=(LoginButton)findViewById(R.id.login_button);
@@ -161,7 +193,7 @@ FirebaseAuth.AuthStateListener mAuthListener;
         };
 
 
-        Button b = (Button) findViewById(R.id.button2);
+        Button b = (Button) findViewById(R.id.otherAccButton);
         b.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -253,6 +285,9 @@ FirebaseAuth.AuthStateListener mAuthListener;
                 });
     }
 
+public void FacebookClick(View v){
 
+   // btn.performClick();
+}
 
 }
