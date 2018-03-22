@@ -7,6 +7,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 
 
 /**
@@ -57,6 +63,8 @@ public class SesionesPasadas extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
@@ -64,7 +72,31 @@ public class SesionesPasadas extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sesiones_pasadas, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_sesiones_pasadas, container, false);
+        ListView list;
+        String[] sistemas = {"Anestesiologia", "Oncologia", "Imageneologia", "Pediatria", "Dermatologia",
+                "Gastroenterologia", "Dermatologia", "Psiquiatria", "Oftalmologia", "Urologia","Ginecologia","Neurologia","Cardiologia"};
+
+        list = (ListView)view.findViewById(R.id.listview);
+
+
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, sistemas);
+
+        list.setAdapter(adaptador);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                // TODO Auto-generated method stub
+                Toast.makeText(getApplicationContext(), "Ha pulsado el item " + position, Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event
