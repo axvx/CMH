@@ -61,6 +61,10 @@ public class login_matricula extends AppCompatActivity {
                             // Intent i=new Intent(getApplicationContext(),)
                             Toast.makeText(getApplicationContext(),"EXITO",Toast.LENGTH_LONG).show();
 
+                            Intent intent = new Intent(getApplicationContext(), MenuOpciones.class);
+                            intent.putExtra("MATRICULA_ID", "LOGON");
+                            startActivity(intent);
+
                         }else{
                             Toast.makeText(getApplicationContext(),"NO EXITO",Toast.LENGTH_LONG).show();
                         }
@@ -71,9 +75,7 @@ public class login_matricula extends AppCompatActivity {
         };
         tr.start();
 
-        Intent intent = new Intent(getApplicationContext(), MenuOpciones.class);
-        intent.putExtra("MATRICULA_ID", "LOGON");
-        startActivity(intent);
+
 
     }
 
@@ -105,13 +107,13 @@ public class login_matricula extends AppCompatActivity {
 
             JSONObject jsonObjData = new JSONObject();
             JSONObject json = new JSONObject();
-            jsonObjData.put("correo", "prueba@proximateapps.com");
-            jsonObjData.put("contrasenia", "12digo16digo18#$");
+            jsonObjData.put("usu_matricula", "prueba@proximateapps.com");
+            jsonObjData.put("usu_contrasena", "12digo16digo18#$");
             json.put("data", jsonObjData);
 
 
             // Create the POST object and add the parameters
-            HttpPost httpPost = new HttpPost("https://serveless.proximateapps-services.com.mx/catalog/dev/webadmin/authentication/login_HTTP/1.1");
+            HttpPost httpPost = new HttpPost("http://cmhline/webservice/valida_usuario.php");
             httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
             HttpClient client = new DefaultHttpClient();
             HttpResponse response = client.execute(httpPost);
@@ -152,12 +154,12 @@ public class login_matricula extends AppCompatActivity {
 
 
     public String EnviarPost(String cor,String pas){
-        String parametros="ID_matricula="+cor+"&contrasena="+pas;
+        String parametros="usu_matricula="+cor+"&usu_contrasena="+pas;
         HttpURLConnection connection=null;
         String respuesta="";
         try{
             try {
-                URL url = new URL("http://interaccionmx.com/cmhapp/webservice/validar.php");
+                URL url = new URL("http://cmhline.com/webservice/valida_usuario.php");
 
 
                 connection = (HttpURLConnection) url.openConnection();

@@ -200,7 +200,7 @@ FirebaseAuth.AuthStateListener mAuthListener;
             public void onClick(View v) {
 
                 startActivity(new Intent(login.this,login_matricula.class));
-                finish();
+                //finish();
             }
 
 
@@ -289,5 +289,11 @@ public void FacebookClick(View v){
 
    // btn.performClick();
 }
+
+    public void Registrarse(View v){ // Carga el activity para registrar nuevo usuario
+        startActivity(new Intent(login.this, Registrarse.class));
+
+    }
+
 
 }

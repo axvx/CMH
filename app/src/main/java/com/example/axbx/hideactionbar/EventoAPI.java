@@ -5,16 +5,19 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 
-        import java.util.List;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.Call;
         import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface EventoAPI {
+
 
     @GET("webservice/")
     Call<List<Evento>> loadChanges(@Query("q") String status);
@@ -25,5 +28,15 @@ public interface EventoAPI {
     Call<List<Evento>> getEvento(@Field("evento_fecha") String evento_fecha);
 
 
+    @FormUrlEncoded
+    @POST("webservice/registrar_usuario.php")
+    Call <List<Regist>> setRegistrar(
+                              @Query("usu_matricula") String usu_matricula,
+                              @Query("usu_nombre") String usu_nombre,
+                              @Query("usu_apellido") String usu_apellido,
+                              @Query("usu_mail") String usu_mail,
+                              @Query("usu_tel") String usu_tel,
+                              @Query("usu_contrasena") String usu_contrasena,
+                              @Field("usu_tipo") String usu_tipo);
 
 }
