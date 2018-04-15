@@ -143,6 +143,229 @@ public class SesionesPasadas extends Fragment {
 
                  }
 
+                if(arg0.getSelectedItemPosition()==0){// Oftalmologia
+
+                    especialidad="ANESTESIOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==1){// Oftalmologia
+
+                    especialidad="ONCOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==2){// Oftalmologia
+
+                    especialidad="IMAGENEOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==3){// Oftalmologia
+
+                    especialidad="PEDIATRIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+
+                if(arg0.getSelectedItemPosition()==4){// Oftalmologia
+
+                    especialidad="DERMATOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==5){// Oftalmologia
+
+                    especialidad="GASTROENTEROLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==6){// Oftalmologia
+
+                    especialidad="DERMATOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==7){// Oftalmologia
+
+                    especialidad="PSIQUIATRIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                                if(arg0.getSelectedItemPosition()==9){// Oftalmologia
+
+                    especialidad="UROLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                if(arg0.getSelectedItemPosition()==10){// Oftalmologia
+
+                    especialidad="GINECOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+                                if(arg0.getSelectedItemPosition()==11){// Oftalmologia
+
+                    especialidad="CARDIOLOGIA";
+
+                    HistoricoController controller = new HistoricoController();
+                    controller.start();
+
+
+
+                    //Carga el listView con los videos del historico
+
+                    list = (ListView)view.findViewById(R.id.listview);
+
+                    mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+
+
+
+                }
+
+
+
 
             }
             public void onNothingSelected(AdapterView<?> arg0) {
