@@ -26,6 +26,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -38,8 +41,10 @@ public class MenuOpciones extends AppCompatActivity
     FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
 
+   public int deslogueo=0;
 
     private VideoView mVideoView;
+    public WebView mWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,16 +54,31 @@ public class MenuOpciones extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        final String s = getIntent().getStringExtra("MATRICULA_ID");
+     final String s = getIntent().getStringExtra("MATRICULA_ID");
+
 
         mAuth=FirebaseAuth.getInstance();
         mAuthListener=new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if(firebaseAuth.getCurrentUser()==null && s.isEmpty()){
-                    startActivity(new Intent(MenuOpciones.this,login.class));
-                }
+
+              if(deslogueo==0) {
+                  if (firebaseAuth.getCurrentUser() == null && s.isEmpty()) {
+                      //  if(firebaseAuth.getCurrentUser()==null ){
+                      startActivity(new Intent(MenuOpciones.this, login.class));
+                  }
+
+
+              }else{
+                  if (firebaseAuth.getCurrentUser() == null) {
+                      //  if(firebaseAuth.getCurrentUser()==null ){
+                      deslogueo=1;
+                      startActivity(new Intent(MenuOpciones.this, login.class));
+              }}
+
+
             }
+
         };
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -69,6 +89,28 @@ public class MenuOpciones extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+
+
+       mWebView = (WebView) findViewById(R.id.webview);
+
+       // https://www.youtube.com/embed/VTyzzclMqWQ
+       // mWebView.loadUrl("https://www.ustream.tv/embed/23465661?html5ui");
+        mWebView.loadUrl("https://www.youtube.com/embed/71P_dDnv-p4");
+
+
+
+
+        // Enable Javascript
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+
+
+        // Force links and redirects to open in the WebView instead of in a browser
+        mWebView.setWebViewClient(new WebViewClient());
+
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -175,7 +217,11 @@ public class MenuOpciones extends AppCompatActivity
         } else if (id == R.id.nav_manage) { //Configuracion
             Toast.makeText(getApplicationContext(),"Tools",Toast.LENGTH_SHORT).show();
 
-mAuth.signOut(); //Desloguea
+deslogueo=1;
+
+    mAuth.signOut(); //Desloguea
+
+
 
 
         } else if (id == R.id.nav_share) { //Compartir
@@ -183,7 +229,7 @@ mAuth.signOut(); //Desloguea
             try {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
-                i.putExtra(Intent.EXTRA_SUBJECT, "Medica Line");
+                i.putExtra(Intent.EXTRA_SUBJECT, "CMHLIne");
                 String sAux = "\nTe recomiendo bajar esta aplicación\n\n";
                 //Vinculo en PlayStore
                 sAux = sAux + "https://play.google.com/store/apps/details?id=Orion.Soft \n\n";

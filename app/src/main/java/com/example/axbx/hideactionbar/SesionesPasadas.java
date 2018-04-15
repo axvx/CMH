@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import static com.facebook.FacebookSdk.getApplicationContext;
@@ -32,6 +34,12 @@ public class SesionesPasadas extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    public static ListView list;
+    public static String[] sistemas;
+    public static ArrayAdapter<String> adaptador;
+    public static WebView mWebView;
+
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -57,6 +65,7 @@ public class SesionesPasadas extends Fragment {
         return fragment;
     }
 
+    public static String especialidad;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,36 +77,87 @@ public class SesionesPasadas extends Fragment {
         }
     }
 
+    private Spinner spinner1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
+
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_sesiones_pasadas, container, false);
-        ListView list;
-        String[] sistemas = {"Anestesiologia", "Oncologia", "Imageneologia", "Pediatria", "Dermatologia",
-                "Gastroenterologia", "Dermatologia", "Psiquiatria", "Oftalmologia", "Urologia","Ginecologia","Neurologia","Cardiologia"};
-
-        list = (ListView)view.findViewById(R.id.listview);
 
 
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, sistemas);
 
-        list.setAdapter(adaptador);
+        spinner1=(Spinner) view.findViewById(R.id.spinner1);
 
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+        spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+            public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+                                       long arg3) {
+
+                Toast.makeText(getApplicationContext(), "Ha pulsado el item " + arg0.getSelectedItemPosition(), Toast.LENGTH_SHORT).show();
+
+                 if(arg0.getSelectedItemPosition()==8){// Oftalmologia
+
+                            especialidad="OFTALMOLOGIA";
+
+                     HistoricoController controller = new HistoricoController();
+                     controller.start();
+
+
+
+                     //Carga el listView con los videos del historico
+
+                     list = (ListView)view.findViewById(R.id.listview);
+
+              mWebView = (WebView) view.findViewById(R.id.WebView1);
+
+                  //  System.out.println("TAMAÑO"+sistemas.length);
+
+                 /*  adaptador = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, sistemas);
+
+                     list.setAdapter(adaptador);
+                     list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+                         @Override
+                         public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id) {
+                             // TODO Auto-generated method stub
+                             Toast.makeText(getApplicationContext(), "Ha pulsado el item " + position, Toast.LENGTH_SHORT).show();
+
+                             if(position==8){
+                                 //Anestesiologia
+                                 //Pasar parametros a un controlador
+
+
+
+
+                             }
+
+                         }
+
+                     });*/
+
+
+                 }
+
+
+            }
+            public void onNothingSelected(AdapterView<?> arg0) {
                 // TODO Auto-generated method stub
-                Toast.makeText(getApplicationContext(), "Ha pulsado el item " + position, Toast.LENGTH_SHORT).show();
 
             }
 
         });
+
+
+
         return view;
 
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -137,4 +197,5 @@ public class SesionesPasadas extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
 }

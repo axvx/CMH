@@ -39,4 +39,12 @@ public interface EventoAPI {
                               @Query("usu_contrasena") String usu_contrasena,
                               @Field("usu_tipo") String usu_tipo);
 
+
+    //http://cmhline.com/webservice/lista01_historico.php?evento_especialidad=OFTALMOLOGIA
+    //[{"evento_especialidad":"OFTALMOLOGIA","evento_hora":"17:00:00","evento_fecha":"2018-03-31","evento_tema":"AVANCES DE OFTALMOLOGIA EN EL ESTADO","evento_imparte":"JUAN MARTINEZ","video_ruta01":"https:\/\/www.youtube.com\/watch?v=d5rH1wxUtL4","video_ruta02":""}]
+
+
+    @FormUrlEncoded
+    @POST("webservice/lista01_historico.php")
+    Call<List<Historico>> getHistorico(@Field("evento_especialidad") String evento_especialidad);
 }

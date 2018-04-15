@@ -14,4 +14,21 @@
     <string name="facebook_app_id">1743918505905085</string>
     <string name="fb_login_protocol_scheme">fb1743918505905085</string>
 
+    <string name="especialidad">Selecciona especialidad</string>
+    <string-array name="especialidad_array">
+        <item>Anestesiologia</item>
+        <item>Oncologia</item>
+        <item>Imageneologia</item>
+        <item>Pediatria</item>
+        <item>Dermatologia</item>
+        <item>Gastroenterologia</item>
+        <item>Dermatologia</item>
+        <item>Psiquiatria</item>
+        <item>Oftalmologia</item>
+        <item>Urologia</item>
+        <item>Ginecologia</item>
+        <item>Cardiologia</item>
+
+    </string-array>
+
 </resources>

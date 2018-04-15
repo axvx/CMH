@@ -85,8 +85,8 @@ public class SesionesVivo extends Fragment {
        mWebView.loadUrl("https://www.ustream.tv/embed/23465661?html5ui");
         //mWebView.loadUrl("https://www.youtube.com/embed/71P_dDnv-p4");
 
+
         mWebView2.loadUrl("http://www.ustream.tv/socialstream/23465661");
-     
 
 
         // Enable Javascript
