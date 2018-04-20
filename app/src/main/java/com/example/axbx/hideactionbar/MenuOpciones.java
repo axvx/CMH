@@ -81,6 +81,9 @@ public class MenuOpciones extends AppCompatActivity
 
         };
 
+
+        //MENU FLOTANTE
+        /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +92,7 @@ public class MenuOpciones extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        */
 
 
        mWebView = (WebView) findViewById(R.id.webview);
@@ -185,7 +189,7 @@ public class MenuOpciones extends AppCompatActivity
 
 
         } else if (id == R.id.nav_gallery) { //Temario
-            Toast.makeText(getApplicationContext(),"Gallery",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(),"Gallery",Toast.LENGTH_SHORT).show();
 
             Temario myFragment = Temario.newInstance("w", "2");  //your fragment
 
@@ -200,7 +204,7 @@ public class MenuOpciones extends AppCompatActivity
 
 
         } else if (id == R.id.nav_slideshow) { //Sesiones Pasadas
-            Toast.makeText(getApplicationContext(),"SlideShow",Toast.LENGTH_SHORT).show();
+         //   Toast.makeText(getApplicationContext(),"SlideShow",Toast.LENGTH_SHORT).show();
 
             SesionesPasadas myFragment = SesionesPasadas.newInstance("w", "2");  //your fragment
 
@@ -215,7 +219,7 @@ public class MenuOpciones extends AppCompatActivity
 
 
         } else if (id == R.id.nav_manage) { //Configuracion
-            Toast.makeText(getApplicationContext(),"Tools",Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(getApplicationContext(),"Tools",Toast.LENGTH_SHORT).show();
 
 deslogueo=1;
 
@@ -225,14 +229,14 @@ deslogueo=1;
 
 
         } else if (id == R.id.nav_share) { //Compartir
-            Toast.makeText(getApplicationContext(),"Compartir",Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getApplicationContext(),"Compartir",Toast.LENGTH_SHORT).show();
             try {
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, "CMHLIne");
                 String sAux = "\nTe recomiendo bajar esta aplicación\n\n";
                 //Vinculo en PlayStore
-                sAux = sAux + "https://play.google.com/store/apps/details?id=Orion.Soft \n\n";
+                sAux = sAux + "http://cmhline.com/app_android/app-debug.apk\n\n";
                 i.putExtra(Intent.EXTRA_TEXT, sAux);
                 startActivity(Intent.createChooser(i, "elige one"));
             } catch(Exception e) {
@@ -243,7 +247,7 @@ deslogueo=1;
         } else if (id == R.id.nav_send) { //Contactanos
 
 
-            Toast.makeText(getApplicationContext(),"Enviar",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(),"Enviar",Toast.LENGTH_SHORT).show();
 
             Contactanos myFragment = Contactanos.newInstance("w", "2");  //your fragment
 

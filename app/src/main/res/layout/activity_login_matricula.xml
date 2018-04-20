@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="#5fb0c9"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true"
     tools:context="com.example.axbx.hideactionbar.login_matricula">
@@ -47,7 +47,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@mipmap/ic_launcher"
-                    android:drawableTint="#FF4081"
+                    android:drawableTint="@color/colorPrimary"
                     android:hint="Matricula"
                     android:inputType="textEmailAddress"
                     android:singleLine="true" />
@@ -62,13 +62,13 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:singleLine="true"
                     android:drawableLeft="@mipmap/ic_launcher"
-                    android:drawableTint="#FF4081"
+                    android:drawableTint="@color/colorPrimary"
                     android:hint="Password"
-                    android:inputType="textPassword" />
+                    android:inputType="textPassword"
+                    android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
-<!--
+            <!--
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,8 +83,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 android:background="#d67601"
-                android:text="Entrar"
                 android:onClick="Validar2"
+                android:text="Entrar"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp" />
