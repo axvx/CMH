@@ -82,9 +82,10 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
-                android:background="#d67601"
+
                 android:onClick="Validar2"
                 android:text="Entrar"
+                android:background="@drawable/other_acc_button_bg"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp" />
@@ -99,6 +100,8 @@
         android:layout_below="@+id/login_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/transparent"
+
         android:elevation="4dp"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/iconoc" />
 </RelativeLayout>

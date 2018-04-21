@@ -165,7 +165,7 @@ FirebaseAuth.AuthStateListener mAuthListener;
 
             @Override
             public void onCancel() {
-                Toast.makeText(getApplicationContext(),"CANCELAR",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"SE CANCELO LA ACCION",Toast.LENGTH_SHORT).show();
 
             }
 

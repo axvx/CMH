@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
 
 
+
         android:background="@drawable/com_facebook_button_background"
         android:entries="@array/especialidad_array"
         android:prompt="@string/especialidad">

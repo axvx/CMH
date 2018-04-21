@@ -172,7 +172,7 @@ public class MenuOpciones extends AppCompatActivity
 
         if (id == R.id.nav_camera) { //Sesiones en vivo
             // Handle the camera action
-            Toast.makeText(getApplicationContext(), "Import", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(), "Import", Toast.LENGTH_SHORT).show();
 
 
             SesionesVivo myFragment = SesionesVivo.newInstance("w", "2");  //your fragment
@@ -266,4 +266,5 @@ deslogueo=1;
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 }

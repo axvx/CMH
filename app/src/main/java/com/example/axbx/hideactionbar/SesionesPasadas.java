@@ -98,7 +98,7 @@ public class SesionesPasadas extends Fragment {
             public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
                                        long arg3) {
 
-                Toast.makeText(getApplicationContext(), "Ha pulsado el item " + arg0.getSelectedItemPosition(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "Ha pulsado el item " + arg0.getSelectedItemPosition(), Toast.LENGTH_SHORT).show();
 
                  if(arg0.getSelectedItemPosition()==8){// Oftalmologia
 
